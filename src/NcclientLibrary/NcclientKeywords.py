@@ -293,7 +293,7 @@ class NcclientKeywords(object):
         try:
             logger.info("alias: %s, rpc_command: %s, source: %s, filter: %s" 
                                     % (alias, rpc_command, source, filter))
-            session.dispatch(rpc_command, source, filter)
+            return str(session.dispatch(rpc_command, source, filter))
         except NcclientException as e:
             logger.error(str(e))
             raise str(e)
